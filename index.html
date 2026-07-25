@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>何欣翰 ｜ 頁面索引</title>
+<style>
+  :root {
+    --ink: #1c1b19;
+    --paper: #f2f0ec;
+    --rule: #d5d1c8;
+    --muted: #6b6863;
+    --teal: #2f8f83;
+    --amber: #e0a13c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    background-color: var(--paper);
+    background-image:
+      repeating-linear-gradient(to right,  rgba(28,27,25,.055) 0 1px, transparent 1px 30px),
+      repeating-linear-gradient(to bottom, rgba(28,27,25,.055) 0 1px, transparent 1px 30px);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC",
+                 "Microsoft JhengHei", sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 8vh 20px 60px;
+  }
+
+  .sheet { width: 100%; max-width: 660px; }
+
+  /* ── 抬頭 ───────────────────────── */
+  .eyebrow {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11.5px;
+    letter-spacing: .18em;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+    font-size: clamp(44px, 12vw, 76px);
+    font-weight: 900;
+    letter-spacing: .04em;
+    line-height: 1.05;
+  }
+
+  .latin {
+    display: block;
+    margin-top: 10px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: .22em;
+    color: var(--teal);
+  }
+
+  /* ── 索引 ───────────────────────── */
+  .index {
+    margin-top: 54px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .row {
+    --accent: var(--teal);
+    display: grid;
+    grid-template-columns: 78px 1fr 24px;
+    align-items: baseline;
+    gap: 18px;
+    padding: 26px 14px 26px 4px;
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: background-color .18s ease, padding-left .18s ease;
+  }
+
+  .row--amber { --accent: var(--amber); }
+
+  .row::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .22s ease;
+  }
+
+  .row:hover,
+  .row:focus-visible {
+    background-color: rgba(28,27,25,.045);
+    padding-left: 14px;
+    outline: none;
+  }
+
+  .row:focus-visible { box-shadow: inset 0 0 0 2px var(--accent); }
+  .row:hover::before, .row:focus-visible::before { transform: scaleY(1); }
+
+  .tag {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11px;
+    letter-spacing: .12em;
+    color: var(--accent);
+    padding-top: 6px;
+  }
+
+  .title {
+    display: block;
+    font-family: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+
+  .desc {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .arrow {
+    font-size: 19px;
+    color: var(--accent);
+    transition: transform .22s ease;
+    justify-self: end;
+  }
+
+  .row:hover .arrow, .row:focus-visible .arrow { transform: translateX(5px); }
+
+  footer {
+    margin-top: 44px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 11.5px;
+    letter-spacing: .08em;
+    color: var(--muted);
+  }
+
+  /* ── 手機 ───────────────────────── */
+  @media (max-width: 520px) {
+    body { padding-top: 6vh; }
+    .row {
+      grid-template-columns: 1fr 24px;
+      row-gap: 8px;
+      padding: 22px 10px 22px 4px;
+    }
+    .tag { grid-column: 1 / -1; padding-top: 0; }
+    .title { font-size: 20px; }
+    .index { margin-top: 40px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+  <main class="sheet">
+
+    <header>
+      <p class="eyebrow">數學科 ・ 頁面索引</p>
+      <h1>何欣翰<span class="latin">MATT</span></h1>
+    </header>
+
+    <nav class="index">
+
+      <a class="row" href="about.html">
+        <span class="tag">個人</span>
+        <span>
+          <span class="title">自我介紹</span>
+          <span class="desc">翻開卡片認識我，順便猜猜我看過哪幾部動畫</span>
+        </span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+      <a class="row row--amber" href="phone-notice.html">
+        <span class="tag">學務處</span>
+        <span>
+          <span class="title">手機管理通知</span>
+          <span class="desc">手機保管櫃實施方式與鑰匙保管說明</span>
+        </span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+
+    </nav>
+
+    <footer>頁面載入需要幾秒，請稍候</footer>
+
+  </main>
+</body>
+</html>
